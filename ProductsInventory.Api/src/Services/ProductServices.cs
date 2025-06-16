@@ -25,7 +25,7 @@ public class ProductService : IProductService
         Products productss = _productRepository.Get(id);
         if (productss == null)
         {
-            throw new ResourceNotFoundException();
+            throw new Exception();
         }
         _productRepository.Remove(id);
 
@@ -46,7 +46,7 @@ public class ProductService : IProductService
         Products products1 = _productRepository.Get(id);
         if (products1 == null)
         {
-            throw new ResourceNotFoundException();
+            throw new Exception();
         }
         if (products.Name != "")
         {
@@ -56,7 +56,7 @@ public class ProductService : IProductService
         return UP;
     }
 
-    Products IProductService.DeleteProduct(string id)
+    public Products UpdateProduct(Products products)
     {
         throw new NotImplementedException();
     }

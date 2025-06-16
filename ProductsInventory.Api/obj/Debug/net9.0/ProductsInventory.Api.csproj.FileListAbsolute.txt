@@ -26,3 +26,4 @@ C:\Users\u499346\VScode Work\ProductsInventory\ProductsInventory.Api\obj\Debug\n
 C:\Users\u499346\VScode Work\ProductsInventory\ProductsInventory.Api\obj\Debug\net9.0\ProductsInventory.Api.pdb
 C:\Users\u499346\VScode Work\ProductsInventory\ProductsInventory.Api\obj\Debug\net9.0\ProductsInventory.Api.genruntimeconfig.cache
 C:\Users\u499346\VScode Work\ProductsInventory\ProductsInventory.Api\obj\Debug\net9.0\ref\ProductsInventory.Api.dll
+C:\Users\u499346\VScode Work\ProductsInventory\ProductsInventory.Api\obj\Debug\net9.0\ProductsInventory.Api.sourcelink.json

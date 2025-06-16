@@ -2,27 +2,44 @@ using ProductInventory.Api.Models;
 
 public class ProductRepository : IProductRepository
 {
+
+    List<Products> products;
+    public ProductRepository()
+    {
+        products = new List<Products>();
+    }
     public Products Get(string id)
     {
-        throw new NotImplementedException();
+        var product = products.Find(product => product.Id == id);
+        return product;
     }
 
     public List<Products> GetAll()
     {
-        throw new NotImplementedException();
+        return products;
     }
 
-    public Products Remove(string id)
+    public void Remove(string id)
     {
-        throw new NotImplementedException();
+        var product = products.Find(product => product.Id == id);
+        products.Remove( product);
+        
     }
 
-    public Products Save(Products products)
+    public Products Save(Products product)
     {
-        throw new NotImplementedException();
+        products.Add(product);
+        return product;
     }
 
-    public Products Update(string id)
+    public Products Update(string id,Products product)
+    {
+        products.Add(product);
+        return product;
+    }
+
+
+    Products IProductRepository.Remove(string id)
     {
         throw new NotImplementedException();
     }

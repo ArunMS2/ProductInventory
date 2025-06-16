@@ -8,10 +8,8 @@ namespace ProductInventory.Api.Services
 
         public List<Products> GetAllProducts();
 
-        public Products DeleteProduct(string id);
+        public void  DeleteProduct(string id);
 
-        public Products UpdateProduct(string id,Products products);
-
-
+        public Products UpdateProduct(Products products);
     }
 }

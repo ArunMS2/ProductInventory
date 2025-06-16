@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "csmFZ+E/xCo=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\u499346\\VScode Work\\ProductsInventory\\ProductsInventory.Api\\ProductsInventory.Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\u499346\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.5\\microsoft.aspnetcore.openapi.9.0.5.nupkg.sha512",
+    "C:\\Users\\u499346\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}

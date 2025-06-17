@@ -3,7 +3,7 @@ using ProductInventory.Api.Models;
 public class ProductRepository : IProductRepository
 {
 
-    List<Products> products;
+    private List<Products> products;
     public ProductRepository()
     {
         products = new List<Products>();
@@ -22,7 +22,7 @@ public class ProductRepository : IProductRepository
     public void Remove(string id)
     {
         var product = products.Find(product => product.Id == id);
-        products.Remove( product);
+        products.Remove(product);
         
     }
 

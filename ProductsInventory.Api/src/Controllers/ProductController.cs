@@ -5,7 +5,7 @@ using ProductInventory.Api.Services;
 namespace ProductInventory.Controllers;
 
 [ApiController]
-[Route("[api/Controller]")]
+[Route("api/[controller]")]
 public class ProductController : ControllerBase
 {
 
@@ -33,7 +33,7 @@ public class ProductController : ControllerBase
         return Ok(new1Product);
     }
 
-
+    [HttpGet]
     public ActionResult GetAllProducts()
     {
         List<Products> allProducts = _productService.GetAllProducts();

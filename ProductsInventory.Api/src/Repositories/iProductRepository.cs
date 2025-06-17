@@ -7,6 +7,6 @@ public interface IProductRepository
     public List<Products> GetAll();
     public Products Get(string id);
     public Products Update(string id,Products products);
-    public Products Remove(string id);
-
+    public void Remove(string id);
+    
 }

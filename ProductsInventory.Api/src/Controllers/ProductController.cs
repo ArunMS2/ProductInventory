@@ -36,24 +36,23 @@ public class ProductController : ControllerBase
     [HttpGet]
     public ActionResult GetAllProducts()
     {
-        List<Products> allProducts = _productService.GetAllProducts();
+        var allProducts = _productService.GetAllProducts();
         return Ok(allProducts);
     }
 
-
+    [HttpDelete("{id}")]
     public ActionResult DeleteProduct(string id)
     {
         _productService.DeleteProduct(id);
-        return NoContent();
-
+        return Ok("Deleted");
     }
 
 
 
     [HttpPut("{id}")]
-    public ActionResult UpdateProduct([FromBody] Products products,string id)
+    public ActionResult UpdateProduct(string id,[FromBody] Products products)
     {
-        Products updateProduct = _productService.UpdateProduct(products);
+        Products updateProduct = _productService.UpdateProduct(id, products);
         return Ok(updateProduct);
     }
 }

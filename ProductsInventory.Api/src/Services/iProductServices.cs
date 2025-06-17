@@ -10,6 +10,6 @@ namespace ProductInventory.Api.Services
 
         public void  DeleteProduct(string id);
 
-        public Products UpdateProduct(Products products);
+        public Products UpdateProduct(string id, Products products);
     }
 }

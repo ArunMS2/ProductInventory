@@ -10,7 +10,7 @@ using ProductInventory.Api.Data;
 namespace ProductsInventory.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250617065627_InitialCreate")]
+    [Migration("20250617094543_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -18,6 +18,26 @@ namespace ProductsInventory.Api.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.6");
+
+            modelBuilder.Entity("Products", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("REAL");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("products");
+                });
 #pragma warning restore 612, 618
         }
     }

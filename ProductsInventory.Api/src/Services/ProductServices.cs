@@ -19,16 +19,13 @@ public class ProductService : IProductService
     }
 
     public void  DeleteProduct(string id)
-    {
-
-        
+    {       
         Products productss = _productRepository.Get(id);
         if (productss == null)
         {
             throw new Exception();
         }
         _productRepository.Remove(id);
-
     }
 
     public List<Products> GetAllProducts()
@@ -52,12 +49,8 @@ public class ProductService : IProductService
         {
             products1.Name = products.Name;
         }
-        Products UP = _productRepository.Save(products1);
+        Products UP = _productRepository.Update(id,products1);
         return UP;
     }
 
-    public Products UpdateProduct(Products products)
-    {
-        throw new NotImplementedException();
-    }
 }

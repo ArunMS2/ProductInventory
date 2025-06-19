@@ -47,25 +47,25 @@ public class ProductRepository : IProductRepository
 
      public async Task<Products> AddAsync(Products product)
     {
-        await _context.products.AddAsync(product);
+        await _context.Products.AddAsync(product);
         await _context.SaveChangesAsync();
         return product;
     }
 
     public async Task<IEnumerable<Products>> GetProductsAsync()
     {
-        return await _context.products.ToListAsync();
+        return await _context.Products.ToListAsync();
     }
 
     public async Task DeleteAsync(Guid id)
     {
-        var product = await _context.products.FindAsync(id);
+        var product = await _context.Products.FindAsync(id);
         if (product is null)
         {
             return;
         }
 
-        _context.products.Remove(product);
+        _context.Products.Remove(product);
         await _context.SaveChangesAsync();
         return;
     }
@@ -74,12 +74,12 @@ public class ProductRepository : IProductRepository
 
     public async Task<Products> GetByIdAsync(Guid id)
     {
-        return await _context.products.FindAsync(id)!;
+        return await _context.Products.FindAsync(id)!;
     }
 
     public async Task UpdateAsync(Products product)
     {
-        var existingProduct = await _context.products.FindAsync(product.Id);
+        var existingProduct = await _context.Products.FindAsync(product.Id);
         if (existingProduct is null)
         {
             throw new KeyNotFoundException("Product not found");

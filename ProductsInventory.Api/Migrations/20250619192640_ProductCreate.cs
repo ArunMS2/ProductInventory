@@ -5,7 +5,7 @@
 namespace ProductsInventory.Api.Migrations
 {
     /// <inheritdoc />
-    public partial class ProductsCreate : Migration
+    public partial class ProductCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

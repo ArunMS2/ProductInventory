@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using ProductInventory.Api.Data.DTOs;
@@ -5,7 +6,7 @@ using ProductInventory.Api.Data.Requests;
 using ProductInventory.Api.Data.Responses;
 using ProductInventory.Api.Services;
 
-namespace ProductInventory.Controllers;
+namespace ProductInventory.api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -18,7 +19,10 @@ public class ProductController : ControllerBase
     {
         _productService = productService;
     }
-
+     
+    
+[Authorize]
+  
     [HttpPost]
     public async Task<IActionResult> CreateProduct([FromBody] CreateProductRequest request)
     {
@@ -32,12 +36,19 @@ public class ProductController : ControllerBase
 
 
     // Get List of Products
+    
+[Authorize]
+
     [HttpGet]
     public async Task<IActionResult> GetAllProducts()
     {
         var result = await _productService.GetAll();
         return Ok(new ApiResponse<IEnumerable<ProductDto>>(true, "Products Fetched Successfully", result));
     }
+
+    
+[Authorize]
+
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(Guid id)
     {
@@ -49,7 +60,11 @@ public class ProductController : ControllerBase
         return Ok(new ApiResponse<ProductDto>(true, "Product Fetched Successfully", result));
     }
 
-     // Update a Product
+    // Update a Product
+     
+     
+[Authorize]
+
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateProduct(Guid id, [FromBody] UpdateProductRequest request)
     {
@@ -62,6 +77,10 @@ public class ProductController : ControllerBase
     }
 
     // Delete a Product
+
+    
+[Authorize]
+
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteProduct(Guid id)
     {
